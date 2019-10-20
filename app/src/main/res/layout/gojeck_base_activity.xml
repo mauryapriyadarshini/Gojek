@@ -6,6 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".GoJeckBaseActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_layout"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/trToolbar"
+                app:title=" "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </androidx.appcompat.widget.Toolbar>
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/toolBarTitle"
+                android:text="@string/tr_toolbar_title"/>
+
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
