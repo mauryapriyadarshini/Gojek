@@ -4,33 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GoJeckBaseActivity">
+    tools:context=".ui.GojeckBaseActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar_layout"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/trToolbar"
-                app:title=" "
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </androidx.appcompat.widget.Toolbar>
+                android:layout_height="wrap_content"
+                app:title=" "></androidx.appcompat.widget.Toolbar>
 
             <TextView
-                android:layout_centerInParent="true"
+                style="@style/toolBarTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/toolBarTitle"
-                android:text="@string/tr_toolbar_title"/>
+                android:layout_centerInParent="true"
+                android:text="@string/tr_toolbar_title" />
 
         </RelativeLayout>
     </com.google.android.material.appbar.AppBarLayout>
+
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"

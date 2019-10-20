@@ -47,11 +47,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/repository_view_holder_margin"
         android:layout_marginTop="8dp"
+        android:background="@drawable/tr_retry_button_background"
         android:paddingTop="@dimen/repository_view_holder_margin"
         android:paddingBottom="@dimen/repository_view_holder_margin"
         android:text="@string/no_internet_connection_retry_text"
         android:textAlignment="center"
-        android:background="@drawable/tr_retry_button_background"
         android:textColor="@color/grey_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
