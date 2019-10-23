@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/repositoryImageView"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
         android:layout_marginLeft="@dimen/repository_view_holder_margin"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,16 +33,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
+        android:layout_marginBottom="@dimen/repository_view_holder_margin"
+        android:paddingBottom="10dp"
         app:layout_constraintStart_toStartOf="@+id/repositoryAuthorNameTextView"
         app:layout_constraintTop_toBottomOf="@+id/repositoryAuthorNameTextView"
-        app:layout_goneMarginBottom="@dimen/repository_view_holder_margin"
         tools:text="mbinary" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/repositoryDetailLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/repository_view_holder_margin"
         app:layout_constraintStart_toStartOf="@id/repositoryNameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/repositoryNameTextView">
 
         <TextView
@@ -50,11 +53,9 @@
             style="@style/textTitleStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:paddingEnd="@dimen/repository_view_holder_margin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="http:\\www.google.com" />
+            tools:text="http:\\www.google.comhttp:\\www.google.comhttp:\\www.google.comhttp:\\www.google.comhttp:\\www.google.comhttp:\\www.google.comhttp:\\www.google.com" />
 
         <ImageView
             android:id="@+id/languageIndicator"

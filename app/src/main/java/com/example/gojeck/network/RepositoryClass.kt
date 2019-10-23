@@ -8,7 +8,9 @@ import retrofit2.Response
 
 class RepositoryClass() {
 
-    private var urlInterface: URLInterface
+    private var urlInterface: URLInterface =
+        RetrofitInstance.getClient()?.create(URLInterface::class.java)!!
+
 
     companion object {
         private object SingletonHelper {
@@ -16,41 +18,33 @@ class RepositoryClass() {
         }
 
         fun getInstance(): RepositoryClass {
-            return Companion.SingletonHelper.INSTANCE
+            return SingletonHelper.INSTANCE
         }
     }
 
-    init {
-        urlInterface = RetrofitInstance.getClient()?.create(URLInterface::class.java)!!
-    }
-
     fun getRepository(): MutableLiveData<List<TrendingRepositoryModel>> {
-        var data: MutableLiveData<List<TrendingRepositoryModel>> =
-            MutableLiveData<List<TrendingRepositoryModel>>()
-
+        val data: MutableLiveData<List<TrendingRepositoryModel>> = MutableLiveData()
         urlInterface.gerRepository()
-            .enqueue(object : Callback<MutableLiveData<List<TrendingRepositoryModel>>> {
+            .enqueue(object : Callback<List<TrendingRepositoryModel>> {
                 override fun onResponse(
-                    call: Call<MutableLiveData<List<TrendingRepositoryModel>>>,
-                    response: Response<MutableLiveData<List<TrendingRepositoryModel>>>
+                    call: Call<List<TrendingRepositoryModel>>,
+                    response: Response<List<TrendingRepositoryModel>>
                 ) {
-
-                    if (response.isSuccessful) {
-                        data = response.body()!!
+                    if (response.body() != null) {
+                        data.value = response.body()
                     }
                 }
 
                 override fun onFailure(
-                    call: Call<MutableLiveData<List<TrendingRepositoryModel>>>,
+                    call: Call<List<TrendingRepositoryModel>>,
                     t: Throwable
                 ) {
-                    //TODO implement no network data
+                    data.postValue(null)
                 }
             })
 
         return data
     }
-
 }
 
 

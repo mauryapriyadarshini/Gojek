@@ -11,5 +11,5 @@ data class TrendingRepositoryModel(
     val stars: Int? = 0,
     val forks: Int? = 0,
     val currentPeroidStars: Int? = 0,
-    var builtBy: List<RepositoryUserModel> = listOf<RepositoryUserModel>()
+    var isExpanded: Boolean = false
 )

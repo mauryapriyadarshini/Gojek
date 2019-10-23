@@ -27,6 +27,7 @@ class GojeckBaseActivity : AppCompatActivity() {
     }
 
     private fun initializeCoordinator() {
+        navigator = Navigator()
         navigator.activity = this
 
         welcomeCoordinator = WelcomeCoordinator(navigator)
@@ -48,5 +49,10 @@ class GojeckBaseActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        navigator.activity = null
     }
 }

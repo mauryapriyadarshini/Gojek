@@ -4,26 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <include layout="@layout/tr_error_layout"
+            />
         <com.facebook.shimmer.ShimmerFrameLayout
-            android:id="@+id/shimmer_view_container"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/shimmerViewContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:orientation="vertical"
-            android:visibility="gone"
             shimmer:duration="800">
 
             <!-- Adding 7 rows of placeholders -->
             <LinearLayout
+                android:id="@+id/layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="gone"
-
                 android:orientation="vertical">
 
                 <include layout="@layout/tr_trending_repository_placeholder_layout" />
@@ -51,5 +47,4 @@
         android:layout_height="match_parent"
         tools:listitem="@layout/tr_trending_repository_fragment_view_holder"
         />
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
